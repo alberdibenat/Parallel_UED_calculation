@@ -1,0 +1,52 @@
+&NEWRUN
+  Head='Gun example'
+  RUN=1
+  Distribution = '3boosters@Number@_FBL_SC.0174.001', Xoff=0.0, Yoff=0.0,
+  TRACK_ALL=T, Auto_phase=T
+  H_max=0.01, H_min=0.001
+  ZSTART=1.742, ZSTOP=7.64
+  Zemit=500, Zphase=1
+
+&OUTPUT
+  RefS=T
+  EmitS=T, PhaseS=T
+/
+
+
+&CHARGE  
+  LSPCH=f, LSPCH3D=f, Loop= f
+
+  Nrad=32, Nlong_in=32
+  Nzf = 32, Nz0 = 3, Smooth_z = 1
+  Nxf = 32, Nx0 = 3, Smooth_x = 1
+  Nyf = 32, Ny0 = 3, Smooth_y = 1
+
+  Nzf = 32, Nz0 = 3, Smooth_z = 1
+  Nxf = 32, Nx0 = 3, Smooth_x = 1
+  Nyf = 32, Ny0 = 3, Smooth_y = 1
+
+  Cell_var=1.0, min_grid=0.4e-6, Max_scale=0.01, Max_count=10, Lmirror=.t
+  L2D_3D=t, z_trans=5.25, min_grid_trans=0.4e-6
+/
+
+
+
+&CAVITY
+  LEField=T,
+  File_Efield(1)='Ez_Booster_HZB.txt', C_smooth(1)=5, C_higher_order(1)=.T, C_pos(1)=3.2079
+  Nue(1)=1.3,
+  MaxE(1)=@E0max1@,
+  Phi(1)=@cavity_phase1@,
+
+  File_Efield(2)='Ez_Booster_HZB.txt', C_smooth(2)=5, C_higher_order(2)=.T, C_pos(2)=4.0267
+  Nue(2)=1.3,
+  MaxE(2)=@E0max2@,
+  Phi(2)=@cavity_phase2@,
+
+  File_Efield(3)='Ez_Booster_HZB.txt', C_smooth(3)=5, C_higher_order(3)=.T, C_pos(3)=4.8809
+  Nue(3)=1.3,
+  MaxE(3)=@E0max3@,
+  Phi(3)=@cavity_phase3@,
+/
+
+
